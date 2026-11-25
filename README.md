@@ -4,7 +4,7 @@
 RateDesk helps students (and anyone sending or receiving money abroad) see what their money is worth. It converts between currencies, lists every rate with search, sort and favourites, and draws a 30-day, 90-day or 1-year trend so you can decide whether today is a good day to exchange.
 
 - **Live site (through the load balancer):** https://www.mwayo.tech/ratedesk/
-- **Demo video (under 2 minutes):** `ADD YOUR VIDEO LINK HERE`
+- **Demo video (under 2 minutes):**
 - **Repository:** https://github.com/mwayo-tech/web_infra-RateDesk
 
 > **API keys and logins:** none. RateDesk uses a public API that needs no key, and the app has no accounts or login. Nothing secret exists in this repository.
@@ -59,7 +59,6 @@ js/api.js         Frankfurter requests, timeouts, caching, error types
 js/chart.js       dependency-free SVG chart
 js/app.js         converter, table, favourites, wiring
 deploy/           deploy.sh (bash) and deploy.ps1 (PowerShell)
-docs/             demo video script
 ```
 
 ## Deploy to the web servers
