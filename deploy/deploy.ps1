@@ -16,8 +16,8 @@ function Run-step($what, [scriptblock] $cmd) {
 foreach ($h in @($web01, $web02)) {
     write-host "== Deploying to $h"
     Run-step "prepare folder on $h" { ssh -i $Key "$User@$h" "rm -rf ~/ratedesk_upload && mkdir -p ~/ratedesk_upload" }
-    Run-step "copy files to $h" { scp -i $Key -r "$root\index.html" "$root\css" "$root\js" "$root\img" "${Usrer}@${h}:~/ratedesk_upload/" }
-    Run-step "install on $h" {ssh -i $key "$User@$h" "sudo rm -rf /var/www/html/ratedesk && sudo mkdir -p /var/www/html/ratedesk && sudo cp -r ~/ratedesk_upload/* /var/wwww/html/ratedesk && rm -rf ~/ratedesk_upload" }
+    Run-step "copy files to $h" { scp -i $Key -r "$root\index.html" "$root\css" "$root\js" "$root\img" "${User}@${h}:~/ratedesk_upload/" }
+    Run-step "install on $h" {ssh -i $key "$User@$h" "sudo rm -rf /var/www/html/ratedesk && sudo mkdir -p /var/www/html/ratedesk && sudo cp -r ~/ratedesk_upload/* /var/www/html/ratedesk && rm -rf ~/ratedesk_upload" }
     $code = (curl.exe -s -o NUL -w "%{http_code}" "http://$h/ratedesk/")
     write-host "   http://$h/ratedesk/ -> $code"
 }

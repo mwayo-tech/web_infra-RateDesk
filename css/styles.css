@@ -39,7 +39,7 @@ body::before {
     z-index: -1;
     background:
     linear-gradient(var(--veil), var(--veil)),
-    url("../img/background.jpg.jpg") center / cover no-repeat;
+    url("../img/background.jpg") center / cover no-repeat;
 }
 .wrap { width: min(1080px, 100% - 32px); margin-inline: auto; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
