@@ -5,7 +5,7 @@ RateDesk helps students (and anyone sending or receiving money abroad) see what 
 
 - **Live site (through the load balancer):** https://www.mwayo.tech/ratedesk/
 - **Demo video (under 2 minutes):** `ADD YOUR VIDEO LINK HERE`
-- **Repository:** https://github.com/mwayo-tech/ratedesk
+- **Repository:** https://github.com/mwayo-tech/web_infra-RateDesk
 
 > **API keys and logins:** none. RateDesk uses a public API that needs no key, and the app has no accounts or login. Nothing secret exists in this repository.
 

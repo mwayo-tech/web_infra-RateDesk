@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="RateDesk: convert currencies, compare exchange rates and see 30-day to 1-year trends. Built for students sending or recieving money abroad.">
+        <title>RateDesk | Currency converter and rate tracker </title>
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+        <a class="skip" href="#converter">skip to the converter</a>
+
+
+        <header class="top">
+            <div class="wrap top-inner">
+                <div>
+                    <h1 class="brand">RateDesk</h1>
+                    <p class="tagline">Know what your money is worth before you send it.</p>                </div>
+            </div>
+        </header>
+
+        <div id="banner" class="banner" role="alert" hidden>
+            <span id="banner-text"></span>
+            <button id="banner-retry" type="button" class="btn small">Try again</button>
+        </div>
+
+        <main class="wrap grid">
+            <section id="converter" class="card" aria-labelledby="conv-title">
+                <h2 id="conv-title">Converter</h2>
+                <form id="conv-form" class="conv-form" autocomplete="off">
+                 <div class="field">
+                    <label for="amount">Amount</label>
+                    <input id="amount" name="amount" type="text" inputmode="decimal" value="100" aria-describedby="amount-err">
+                    <p id="amount-err" class="err" role="alert"></p> 
+                 </div>
+                 <div class="field">
+                    <label for="from">From</label>
+                    <select id="from" name="from"></select>
+                 </div>
+                 <button id="swap" type="button" class="btn icon" aria-label="swap currencies">⇄</button>
+                 <div class="field">
+                    <label for="to">To</label>
+                    <select id="to" name="to"></select>
+                 </div>
+                  </form>
+                  <div class="result" aria-live="polite">
+                    <p id="result-line" class="result-main"></p>
+                    <p id="result-meta" class="muted"></p>
+                  </div>
+            </section>
+
+            <section id="history" class="card" aria-labelledby="hist-title">
+                <div class="card-head">
+                    <h2 id="hist-title">Trend <span id="hist-pair" class="muted"></span></h2>
+                    <div class="seg" role="group" aria-label="chart range">
+                        <button type="button" class="seg-btn" data-days="30" aria-pressed="true">30 days</button>
+                        <button  type="button" class="seg-btn" data-days="90" aria-pressed="false">90 days</button>
+                        <button type="button" class="seg-btn" data-days="365" aria-pressed="false">1 year</button>
+                    </div>
+                </div>
+                <figure class="chart-fig">
+                    <div id="chart" class="chart" role="img" aria-label="Exchange rate trend chart"></div>
+                    <figcaption id="chart-caption" class="muted"></figcaption>
+                </figure>
+            </section>
+
+<section id="rates" class="card wide" aria-labelledby="rates-title">
+    <h2 id="rates-title">All rates</h2>
+    <div class="controls">
+    <div class="field">
+        <label for="base">1 unit of</label>
+        <select id="base"></select>
+    </div>
+    <div class="field grow">
+        <label for="search">Search</label>
+        <input id="search" type="search" placeholder="Code or name, e.g. 'RWF' or 'GHS'">
+    </div>
+    <div class="field">
+        <label for="sort">Sort by</label>
+        <select id="sort">
+            <option value="code-asc">Code A-Z</option>
+            <option value="name-asc">Name </option>
+            <option value="rate-desc">Rate high → low</option>
+            <option value="rate-asc">Rate low → high</option>
+        </select>
+    </div>
+    <label class="check"><input id="favs-only" type="checkbox"> Favourites only</label>
+    </div>
+
+    <div class="table-wrap">
+        <table>
+            <caption class="sr-only">Exchange rates for selected base currency</caption>
+            <thead>
+                <tr>
+                    <th scope="col" class="fav-col"><span class="sr-only">Favourites</span></th>
+                    <th scope="col">Currency</th>
+                    <th scope="col" class="num">Rate</th>
+                    <th scope="col" class="act-col"><span class="sr-only">Action</span></th>
+                </tr>
+            </thead>
+            <tbody id="rows"></tbody>
+        </table>
+    </div>
+    <p id="rows-count" class="muted" role="status" aria-live="polite"></p>
+</section>
+
+</main>
+
+<footer class="wrap foot">
+    <p id="served-by" class="muted" hidden></p>
+    <p>Exchange rates from <a href="https://frankfurter.dev" target="_blank" rel="noopener noreferrer">Frankfurter</a>, which publishes reference rates from the European Central Bank. Reference rates are for informations, not for trading.</p>
+</footer>
+
+<script src="js/api.js"></script>
+<script src="js/chart.js"></script>
+<script src="js/app.js"></script>
+
+    </body>
+</html>
