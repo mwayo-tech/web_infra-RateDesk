@@ -59,6 +59,7 @@ js/api.js         Frankfurter requests, timeouts, caching, error types
 js/chart.js       dependency-free SVG chart
 js/app.js         converter, table, favourites, wiring
 deploy/           deploy.sh (bash) and deploy.ps1 (PowerShell)
+img/background.jpg  page background
 ```
 
 ## Deploy to the web servers
